@@ -1,0 +1,341 @@
+/* General Styles */  
+body {  
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent font throughout */  
+    margin: 0;  
+    padding: 0;  
+    background-color: #343541; /* Dark background */  
+    color: #e0e0e0; /* Light text for readability */  
+}  
+  
+h2, h3 {  
+    color: #ffffff; /* Bright white headings for contrast */  
+    font-family: inherit; /* Ensure headings use the same font as body */  
+}  
+  
+/* App Container */  
+#app-container {  
+    display: flex;  
+    flex-direction: column;  
+    padding: 20px;  
+    max-width: 1200px;  
+    margin: 0 auto;  
+}  
+  
+/* Chat Section */  
+#chat-section {  
+    margin-bottom: 20px;  
+    border: 1px solid #404258; /* Border with accent color */  
+    background: #404258; /* Subtle dark background */  
+    border-radius: 8px;  
+    overflow: hidden;  
+}  
+  
+.chat-window {  
+    height: 300px;  
+    overflow-y: auto;  
+    padding: 10px;  
+    background-color: #343541; /* Matches overall background */  
+    border-bottom: 1px solid #404258;  
+    color: #e0e0e0;  
+    font-family: inherit; /* Inherit font from body */  
+}  
+  
+#chat-input {  
+    display: flex;  
+    padding: 10px;  
+    background-color: #404258; /* Accent color for input section */  
+}  
+  
+#user-input {  
+    flex: 1;  
+    padding: 10px;  
+    border: 1px solid #404258; /* Input border matches theme */  
+    border-radius: 4px;  
+    background-color: #343541; /* Match dark theme */  
+    color: #e0e0e0;  
+    font-family: inherit; /* Consistent font */  
+    margin-right: 10px;  
+}  
+  
+#user-input:focus {  
+    outline: none;  
+    border-color: cyan; /* Highlight input with cyan */  
+}  
+  
+#send-button {  
+    background-color: cyan; /* Cyan button for call-to-action */  
+    color: #343541; /* Contrasting text color */  
+    padding: 10px 20px;  
+    border: none;  
+    border-radius: 4px;  
+    cursor: pointer;  
+    font-weight: bold;  
+    font-family: inherit; /* Consistent font */  
+}  
+  
+#send-button:hover {  
+    background-color: #66d4d4; /* Lighter cyan for hover effect */  
+}  
+  
+/* Prompt Library Section */  
+#prompt-library-container {  
+    margin-top: 20px;  
+    background: #404258; /* Accent container background */  
+    border: 1px solid #404258;  
+    border-radius: 8px;  
+    padding: 20px;  
+}  
+  
+#category-details {  
+    display: flex;  
+    gap: 20px;  
+}  
+  
+/* Category List */  
+#category-list {  
+    flex: 1;  
+    border-right: 1px solid #343541; /* Subtle border for separation */  
+    padding-right: 20px;  
+}  
+  
+#category-list h3 {  
+    margin-bottom: 10px;  
+    font-size: 1.2rem;  
+    color: cyan; /* Highlight section title in cyan */  
+    font-family: inherit; /* Consistent font */  
+}  
+  
+#prompt-library {  
+    list-style: none;  
+    padding: 0;  
+    margin: 0;  
+    max-height: 300px;  
+    overflow-y: auto;  
+}  
+  
+#prompt-library li {  
+    padding: 10px;  
+    margin-bottom: 5px;  
+    background: #343541; /* Match dark theme */  
+    border-radius: 4px;  
+    cursor: pointer;  
+    transition: background-color 0.2s ease;  
+    color: #e0e0e0; /* Light text for contrast */  
+    font-family: inherit; /* Consistent font */  
+}  
+  
+#prompt-library li:hover {  
+    background-color: #404258; /* Subtle highlight on hover */  
+}  
+  
+#prompt-library li.active {  
+    background-color: cyan; /* Cyan for active state */  
+    color: #343541; /* Contrasting text color */  
+}  
+  
+/* Content Display */  
+#content-display {  
+    flex: 2;  
+    padding-left: 20px;  
+}  
+  
+#category-content {  
+    background: #343541; /* Match dark theme */  
+    padding: 20px;  
+    border-radius: 8px;  
+    min-height: 150px;  
+    color: #e0e0e0; /* Light text */  
+    font-size: 1rem;  
+    line-height: 1.5;  
+    border: 1px solid #404258; /* Accent border */  
+    font-family: inherit; /* Consistent font */  
+}  
+  
+/* Scrollbar Styles */  
+::-webkit-scrollbar {  
+    width: 8px;  
+}  
+  
+::-webkit-scrollbar-thumb {  
+    background-color: #555; /* Subtle scrollbar color */  
+    border-radius: 10px;  
+}  
+  
+::-webkit-scrollbar-thumb:hover {  
+    background-color: #777; /* Lighter scrollbar on hover */  
+}  
+  
+/* Modal Background Overlay */  
+.modal {  
+    display: none; /* Hidden by default */  
+    position: fixed; /* Fixed position relative to the viewport */  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100%;  
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */  
+    z-index: 1000; /* Ensures it appears above other content */  
+    justify-content: center; /* Center horizontally */  
+    align-items: center; /* Center vertically */  
+}  
+  
+/* Modal Content Box */  
+.modal-content {  
+    background: #404258;  
+    padding: 30px; /* Increased padding for more spacious content */  
+    border-radius: 10px;  
+    width: 900px; /* Increased width for larger content area */  
+    max-width: 95%; /* Responsive for smaller screens */  
+    position: relative;  
+    color: #e0e0e0;  
+    font-size: 16px; /* Larger font size for better readability */  
+    font-family: inherit; /* Consistent font */  
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6); /* Enhanced shadow for better elevation */  
+    animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in animation */  
+    max-height: 90%; /* Prevent the modal from exceeding screen height */  
+    overflow-y: auto; /* Add scroll if content exceeds height */  
+}  
+  
+/* Title Styling */  
+.modal-content h2 {  
+    margin-top: 0;  
+    margin-bottom: 20px;  
+    color: cyan;  
+    text-align: center;  
+    font-size: 24px; /* Larger title font */  
+    font-family: inherit; /* Consistent font */  
+}  
+  
+/* Close Button */  
+.modal-content .close {  
+    position: absolute;  
+    top: 15px;  
+    right: 15px;  
+    font-size: 24px; /* Larger close button */  
+    cursor: pointer;  
+    color: #e0e0e0;  
+    background: none;  
+    border: none;  
+    outline: none;  
+    font-family: inherit; /* Consistent font */  
+}  
+  
+.modal-content .close:hover {  
+    color: cyan;  
+}  
+  
+/* Table Styling for Prompts */  
+#edit-prompt-table {  
+    width: 100%;  
+    border-collapse: collapse; /* Remove space between table cells */  
+    margin-top: 20px;  
+    font-size: 16px; /* Larger table font size */  
+    font-family: inherit; /* Consistent font */  
+}  
+  
+#edit-prompt-table th,  
+#edit-prompt-table td {  
+    border: 1px solid #404258; /* Border around table cells */  
+    padding: 15px; /* Increased padding for better spacing */  
+    text-align: left;  
+    vertical-align: middle;  
+    background: #343541; /* Dark background for cells */  
+    color: #e0e0e0;  
+    font-family: inherit; /* Consistent font */  
+}  
+  
+#edit-prompt-table th {  
+    background: #404258; /* Slightly darker for headers */  
+    color: cyan; /* Cyan text for headers */  
+    font-weight: bold;  
+    font-size: 18px; /* Larger font size for headers */  
+}  
+  
+#edit-prompt-table tr:nth-child(even) td {  
+    background: #3a3e4b; /* Alternate row color for better readability */  
+}  
+  
+#edit-prompt-table td:last-child {  
+    text-align: center; /* Center-align delete button in the last column */  
+}  
+  
+/* Inputs and Textareas in Table */  
+#edit-prompt-table input[type="text"],  
+#edit-prompt-table textarea {  
+    width: 95%; /* Adjust width to fit cell with proper spacing */  
+    padding: 12px; /* Increased padding for inputs */  
+    background: #343541; /* Match modal's dark theme */  
+    border: 1px solid #404258; /* Subtle border */  
+    color: #e0e0e0;  
+    border-radius: 5px; /* Rounded corners for inputs */  
+    font-size: 16px; /* Larger font size */  
+    font-family: inherit; /* Consistent font */  
+    resize: none; /* Disable textarea resizing */  
+}  
+  
+#edit-prompt-table textarea {  
+    height: 60px; /* Increased height for better usability */  
+}  
+  
+/* Delete Button in Table */  
+.delete-prompt {  
+    background-color: #dc3545; /* Red button for delete */  
+    color: #fff;  
+    padding: 10px 18px; /* Larger button for better visibility */  
+    border: none;  
+    border-radius: 4px;  
+    cursor: pointer;  
+    font-size: 16px; /* Larger font size */  
+    font-weight: bold;  
+    font-family: inherit; /* Consistent font */  
+}  
+  
+.delete-prompt:hover {  
+    background-color: #c82333;  
+}  
+  
+/* Add Prompt and Save Changes Buttons */  
+#add-prompt,  
+#save-changes {  
+    background-color: cyan;  
+    color: #343541;  
+    padding: 15px 30px; /* Increased button size */  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    font-weight: bold;  
+    font-family: inherit; /* Consistent font */  
+    margin-top: 20px;  
+    display: inline-block; /* Align buttons horizontally */  
+    font-size: 16px; /* Larger font size */  
+}  
+  
+#add-prompt:hover,  
+#save-changes:hover {  
+    background-color: #66d4d4;  
+}  
+  
+#add-prompt {  
+    float: left;  
+}  
+  
+#save-changes {  
+    float: right;  
+    background-color: #28a745; /* Green for save button */  
+}  
+  
+#save-changes:hover {  
+    background-color: #218838;  
+}  
+  
+/* Fade-in Animation */  
+@keyframes fadeIn {  
+    from {  
+        opacity: 0;  
+        transform: translateY(-20px); /* Slight upward movement */  
+    }  
+    to {  
+        opacity: 1;  
+        transform: translateY(0); /* Original position */  
+    }  
+}  
