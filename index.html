@@ -1,71 +1,77 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Image Generation Application</title>  
-    <link rel="stylesheet" href="styles.css">  
-</head>  
-<body>  
-    <div id="app-container">  
-        <!-- Chat Section -->  
-        <div id="chat-section">  
-            <div id="chat-window" class="chat-window"></div>  
-            <div id="chat-input">  
-                <input type="text" id="user-input" placeholder="Type your message here...">  
-                <button id="send-button">Send</button>  
-            </div>  
-        </div>  
-  
-        <!-- Prompt Library Section -->  
-        <div id="prompt-library-container">  
-            <h2>Prompt Library</h2>  
-            <div id="category-details">  
-                <div id="category-list">  
-                    <h3>Categories</h3>  
-                    <ul id="prompt-library">  
-                        <!-- Dynamic categories will be injected here -->  
-                    </ul>  
-                </div>  
-                <div id="content-display">  
-                    <h3>Category Details</h3>  
-                    <div id="category-content">  
-                        <p>Select a category to view prompt content.</p>  
-                    </div>  
-                </div>  
-            </div>  
-        </div>  
-    </div>  
-  
-    <!-- Edit Modal -->  
-    <div id="edit-dialog" class="modal">  
-        <div class="modal-content">  
-            <span class="close">&times;</span>  
-            <h2>Edit Category</h2>  
-            <form id="edit-form">  
-                <label for="edit-category-name">Category Name:</label>  
-                <input type="text" id="edit-category-name" required style="font-size: 18px; padding: 12px;">  
-      
-                <!-- Tabular Display for Prompts -->  
-                <table id="edit-prompt-table">  
-                    <thead>  
-                        <tr>  
-                            <th>Prompt Name</th>  
-                            <th>Prompt Content</th>  
-                            <th>Actions</th>  
-                        </tr>  
-                    </thead>  
-                    <tbody id="edit-prompt-fields">  
-                        <!-- Dynamic rows will be added here -->  
-                    </tbody>  
-                </table>  
-      
-                <button type="button" id="add-prompt">Add Prompt</button>  
-                <button type="button" id="save-changes">Save Changes</button>  
-            </form>  
-        </div>  
-    </div>  
-  
-    <script src="script.js"></script>  
-</body>  
-</html>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConvoPanel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="app-container">
+        <!-- App Title -->
+        <!-- <header>
+            <h1>ConvoPanel</h1>
+        </header> -->
+
+        <!-- Updated Prompt Library Section -->
+        <div id="prompt-library-container">
+            <h2>Prompt Library</h2>
+            <div id="category-details">
+                <div id="category-list">
+                    <h3>Categories</h3>
+                    <ul id="prompt-library">
+                        <!-- Dynamic categories will be injected here -->
+                        <li class="add-category">
+                            <button id="add-category-button" title="Add Category">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div id="content-display">
+                    <h3>Category Details</h3>
+                    <div id="category-content">
+                        <p>Select a category to view prompt content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="edit-dialog" class="modal">
+        <div class="modal-content">
+            <span class="close" title="Close">&times;</span>
+            <h2>Edit Category</h2>
+            <form id="edit-form">
+                <label for="edit-category-name">Category Name:</label>
+                <input type="text" id="edit-category-name" required>
+
+                <!-- Tabular Display for Prompts -->
+                <table id="edit-prompt-table">
+                    <thead>
+                        <tr>
+                            <th>Prompt Name</th>
+                            <th>Prompt Content</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="edit-prompt-fields">
+                        <!-- Dynamic rows will be added here -->
+                    </tbody>
+                </table>
+
+                <button type="button" id="add-prompt" title="Add Prompt">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button type="button" id="save-changes" title="Save Changes">
+                    <i class="fas fa-save"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
